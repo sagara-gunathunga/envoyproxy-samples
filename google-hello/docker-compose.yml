@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  envoyproxy:
+    image: envoyproxy/envoy:latest
+    restart: always
+    ports:
+     - "80:10000"
+     - "8080:9901"
+    volumes: 
+     - ./envoy.yaml:/etc/envoy/envoy.yaml 
+
