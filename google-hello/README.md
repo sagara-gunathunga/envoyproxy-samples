@@ -1,20 +1,20 @@
-Envoy proxy route traffic to Google
+Envoy proxy route traffic to Apache2 server on host
 =
 
-In this sample Envoy proxy route traffic to Google
+In this sample Envoy proxy route traffic to  Apache2 server on host
 
-Run the proxy using 'docker run'
+1. Start Apache2 server on host
 ```
-docker run --rm -p 80:10000 -p 8080:9901 -v $(pwd)/envoy.yaml:/etc/envoy/envoy.yaml envoyproxy/envoy:latest
+sudo apachectl start
 ```
-Run the proxy using Docker compose
+
+2. Run the proxy using Docker compose
 ```
 docker-compose up
 ```
 
-How to test the sample
+3. Test the sample
 ```
-Service  : curl http://localhost/
-Admin UI : curl http://localhost:8080
+Service  : curl http://localhost:8080/
 ```
 
